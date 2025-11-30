@@ -10,7 +10,6 @@ function TitleScreen({ onStart }) {
           <span className="title-word-video">Video </span>
           <span className="title-word-game">Game</span>
         </div>
-        <div className="title-line-2">of</div>
         <div className="title-line-3">
           <span className="title-word-organizer">Organizer</span>
           <span className="title-trademark">™</span>
@@ -28,7 +27,7 @@ function TitleScreen({ onStart }) {
           Licensed & Controlled by Neural Node & Code
         </div>
         <div className="copyright-line">
-          Video Games Organizer and Time Machine
+          Video Games Organizer and time machine
         </div>
       </div>
 
