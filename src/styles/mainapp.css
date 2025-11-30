@@ -2,9 +2,27 @@
 .main-app {
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(180deg, #0a0a0a 0%, #1a0a2e 100%);
+  background: linear-gradient(180deg, #0a0a0a 0%, #1a1000 100%);
   position: relative;
   overflow-x: hidden;
+}
+
+/* Scanline effect for main app */
+.main-app::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    transparent 50%, 
+    rgba(255, 204, 0, 0.05) 50%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.3;
 }
 
 /* Header Section */
@@ -74,6 +92,8 @@
   padding: 40px 20px;
   max-width: 1400px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
 /* Grid Layout for Game Cards */
@@ -141,7 +161,7 @@
   text-align: center;
   padding: 60px 20px;
   font-size: 12px;
-  color: #9d00ff;
+  color: #4da6ff;
   line-height: 2;
 }
 
@@ -195,33 +215,31 @@
     0 0 30px #ff1493;
 }
 
-/* Modal/Overlay */
+/* Modal/Overlay - FIXED */
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.9);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  padding: 20px;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 10000;
+  overflow-y: scroll;
+  padding: 120px 20px 100px 20px;
 }
 
 .modal-content {
   background: #0a0a0a;
   border: 3px solid #00ffff;
-  padding: 30px;
+  padding: 80px 30px 30px 30px;
   max-width: 800px;
   width: 100%;
-  max-height: 90vh;
-  overflow-y: auto;
   position: relative;
   box-shadow: 
     0 0 30px #00ffff,
     inset 0 0 20px rgba(0, 255, 255, 0.1);
+  margin: 0 auto;
+  min-height: 200px;
 }
 
 .modal-close {
@@ -233,8 +251,9 @@
   cursor: pointer;
   padding: 8px 16px;
   border: 2px solid #ff1493;
-  background: transparent;
+  background: #0a0a0a;
   transition: all 0.3s ease;
+  z-index: 10001;
 }
 
 .modal-close:hover {
@@ -261,5 +280,13 @@
   
   .search-input {
     font-size: 10px;
+  }
+  
+  .modal-overlay {
+    padding: 40px 10px;
+  }
+  
+  .modal-content {
+    padding: 50px 20px 20px 20px;
   }
 }

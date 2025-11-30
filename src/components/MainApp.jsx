@@ -22,6 +22,10 @@ function MainApp() {
 
   return (
     <div className="main-app">
+      {/* Advanced Visual Effects */}
+      <div className="grid-floor"></div>
+      <div className="vignette"></div>
+      
       <header className="app-header">
         <h1 className="app-title">The Video Game Organizer</h1>
         <nav className="app-nav">

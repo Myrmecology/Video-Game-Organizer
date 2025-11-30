@@ -13,6 +13,8 @@ function GameDetails({ game, onClose }) {
   const [addMessage, setAddMessage] = useState('')
 
   useEffect(() => {
+    // Scroll to top when modal opens
+    window.scrollTo(0, 0)
     fetchDetails()
     setLists(getLists())
   }, [game.id])
@@ -66,10 +68,17 @@ function GameDetails({ game, onClose }) {
     return tmp.textContent || tmp.innerText || ''
   }
 
+  const handleOverlayClick = (e) => {
+    if (e.target.classList.contains('modal-overlay')) {
+      onClose()
+    }
+  }
+
   if (loading) {
     return (
-      <div className="modal-overlay" onClick={onClose}>
-        <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+      <div className="modal-overlay" onClick={handleOverlayClick}>
+        <div className="modal-content">
+          <button className="modal-close" onClick={onClose}>CLOSE</button>
           <div className="loading">Loading game details...</div>
         </div>
       </div>
@@ -77,8 +86,8 @@ function GameDetails({ game, onClose }) {
   }
 
   return (
-    <div className="modal-overlay" onClick={onClose}>
-      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+    <div className="modal-overlay" onClick={handleOverlayClick}>
+      <div className="modal-content">
         <button className="modal-close" onClick={onClose}>
           CLOSE
         </button>

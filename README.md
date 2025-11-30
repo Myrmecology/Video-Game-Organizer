@@ -1,5 +1,7 @@
 # The Video Game Organizer
 
+For a video DEMO of this project please visit: https://www.youtube.com/watch?v=6fDqxkDeVvU 
+
 A retro-styled video game organization tool with authentic NES/SNES aesthetics and 80s arcade atmosphere.
 
 ## Features

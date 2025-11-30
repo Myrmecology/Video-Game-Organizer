@@ -13,7 +13,7 @@ export const COLORS = {
   backgroundDark: '#000000',
   neonCyan: '#00ffff',
   neonMagenta: '#ff00ff',
-  neonPurple: '#9d00ff',
+  neonBlue: '#4da6ff',
   neonPink: '#ff1493',
   neonYellow: '#ffff00',
   textPrimary: '#ffffff',
